@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   get 'tasks/:id', to: 'tasks#show', as: 'task'
 
   # UPDATE
-  get 'restaurants/:id/edit', to: 'restaurants#edit', as: 'edit_restaurant'
-  patch 'restaurants/:id', to: 'restaurants#update'
+  get 'tasks/:id/edit', to: 'tasks#edit', as: 'edit_task'
+  patch 'tasks/:id', to: 'tasks#update'
 
+  # DESTROY
+  delete 'tasks/:id', to: 'tasks#destroy'
 
-
+  root to: 'tasks#index'
 end

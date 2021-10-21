@@ -22,15 +22,18 @@ class TasksController < ApplicationController
   end
 
   def update
-    # set_restaurant - Substituido pelo before_action
-    @restaurant.update(restaurant_params)
-    redirect_to restaurant_path(@restaurant)
+    @task.update(task_params)
+    redirect_to task_path(@task)
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private
 
   def set_task
-    raise
     @task = Task.find(params[:id])
   end
 
